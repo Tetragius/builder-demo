@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-router-dom/5.2.0/react-router-dom.js" integrity="sha512-LOOlcIrzggklo15g/pbJis06755L5SZYg2RZEUw7t8k/aALW/atg2qg6h8oSLIvk25ulbzhz/p4LH2PUYa+rLw==" crossorigin="anonymous"></script>
+    <script src="Vienna2.js"></script>
+</head>
+
+<body>
+    <div id="app">base</div>
+    <script>
+        let old, sc;
+        setInterval(() => {
+            const script = localStorage.getItem('script');
+            if (script !== old) {
+                // const file = new File([script], 'index.js', { type: 'text/javascript' });
+                try {
+                    eval(script);
+                    old = script;
+                }
+                catch { }
+            }
+        }, 5000);
+    </script>
+</body>
+
+</html>
